@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Primera Página</title>
+    <link rel="preconect" href="https://fonts.googleapis.com" />
+    <link rel="preconect" href="https://gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=handjet:wght@100..900&family=Oswald:wght@200..700&family=Playwrite+CU:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form method="post" class="space-y-6">
+      {% csrf_token %}
+      <div>
+        <label
+          for="{{ form.username.id_for_label }}"
+          class="block text-2xl font-bevan text-[#000000] flex justify-center"
+          >U S U A R I O</label
+        >
+
+        <input
+          type="text"
+          name="{{ form.username.name }}"
+          id="{{ form.username.id_for_label }}"
+          placeholder='"Ingrese Usuario"'
+          required
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm"
+        />
+      </div>
+
+      <div class="relative">
+        <label
+          for="{{ form.password.id_for_label }}"
+          class="block text-2xl font-bevan text-[#000000] flex justify-center"
+          >C O N T R A S E Ñ A</label
+        >
+      </div>
+      <div class="relative">
+        <input
+          type="password"
+          name="{{ form.password.name }}"
+          id="password"
+          placeholder='"Ingrese Contraseña"'
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm"
+          required
+        />
+      </div>
+      <div class="flex items-center justify-center">
+        <button
+          type="submit"
+          class="w-[200px] py-2 px-4 bg-[#362416] text-white font-semibold rounded-lg shadow-md hover:bg-brown-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brown-500 justify-center"
+        >
+          Iniciar Sesión
+        </button>
+      </div>
+    </form>
+</html>
